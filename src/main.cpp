@@ -7,10 +7,17 @@
 */
 #include <Arduino.h>
 
+/*int feurouge1=8;
+int feuorange1=7;
+int feuvert1=6;
+int feurouge2=5;
+int feuorange2=4;
+int feuvert2=3;*/
+
 //Feu de signalisation N1
-#define ledRouge1  2     
-#define ledOrange1 1   
-#define ledVert1   0
+#define ledRouge1  8     
+#define ledOrange1 7  
+#define ledVert1   6
 
 //Feu de signalisation N2
 #define ledRouge2  5
@@ -18,8 +25,8 @@
 #define ledVert2   3
 
 //Feu de signalisation virage
-#define ledRouge3  6
-#define ledRouge4  7
+#define ledRougeTraversé  1
+#define ledRouge4  0
 
 int timer1 = 2000;    // Le temps est fixé à 2 secondes
 int timer2 = 3000;    // Le temps est fixé à 3 secondes
@@ -41,14 +48,18 @@ int timer2 = 3000;    // Le temps est fixé à 3 secondes
 #define ledOrange2Off digitalWrite(ledOrange2, LOW)
 
 void setup() {
-   // On initialise les sorties
+   // Initialisation du feu 1
     pinMode(ledRouge1, OUTPUT);
     pinMode(ledOrange1, OUTPUT);
     pinMode(ledVert1, OUTPUT);
 
+    //Initialisation du feu2
     pinMode(ledRouge2, OUTPUT);
     pinMode(ledOrange2, OUTPUT);
     pinMode(ledVert2, OUTPUT);
+
+    /*ledRouge1On; // allumage du feu rouge 1
+    ledRouge2On; // allumage du feu rouge 2*/
 }
 
 void loop() {
